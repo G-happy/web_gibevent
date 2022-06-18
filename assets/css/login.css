@@ -26,8 +26,6 @@ body {
     background: url(/assets/images/login_title.png) no-repeat center;
 }
 
-.login-box {}
-
 .reg-box {
     display: none;
 }

@@ -54,13 +54,16 @@ $(function() {
             data: $(this).serialize(),
 
             success: function(res) {
+                console.log(res);
                 if (res.status !== 0) {
                     return layer.msg("登陆失败!");
+                } else {
+                    layer.msg("登录成功!");
+                    // 将得到的 token 字符串,保存到 localStorage.setItem中,没有这个属性,无法访问有权限的信息
+                    localStorage.setItem("token", res.token);
+                    // 跳转到后台主页
+                    location.href = "./index.html";
                 }
-                layer.msg("登录成功!");
-                // console.log(res.token);  
-                // 跳转到后台主页
-                location.href = "./index.html";
             }
         })
     })
