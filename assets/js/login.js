@@ -34,15 +34,19 @@ $(function() {
         e.preventDefault();
 
         // 2.发起 Ajax 的 Post 请求
-        $.post("/api/reguser", { username: $("#form_reg [name=username]").val(), password: $("#form_reg [name=password]").val() }, function(res) {
-            if (res.status !== 0) {
-                return layer.msg(res.message);
-            }
-            layer.msg("注册成功!");
+        $.post("/api/reguser", {
+                username: $("#form_reg [name=username]").val(),
+                password: $("#form_reg [name=password]").val()
+            },
+            function(res) {
+                if (res.status !== 0) {
+                    return layer.msg(res.message);
+                }
+                layer.msg("注册成功!");
 
-            // 模拟点击行为
-            $("#link_login").click();
-        })
+                // 模拟点击行为
+                $("#link_login").click();
+            })
     });
 
     // 监听登录表单的提交事件
