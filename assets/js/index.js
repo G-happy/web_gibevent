@@ -31,12 +31,14 @@ function getUserInfo() {
         },
         // // 成功或者失败都会调用这个 complete
         // complete: function(res) {
-        //     if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败!") {
-        //         // 强制清空 token
-        //         localStorage.removeItem("token");
-        //         // 强制跳转登录页
-        //         location.href = "/login.html";
-        //     }
+        // if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败!") {
+        //     // 强制清空 token
+        //     localStorage.removeItem("token");
+        //     // 强制跳转登录页
+        //     location.href = "/login.html";
+        // }
+        // console.log(res);
+        // location.href = "/login.html";
         // }
     });
 }

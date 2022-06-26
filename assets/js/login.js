@@ -58,7 +58,6 @@ $(function() {
             data: $(this).serialize(),
 
             success: function(res) {
-                console.log(res);
                 if (res.status !== 0) {
                     return layer.msg("登陆失败!");
                 } else {
