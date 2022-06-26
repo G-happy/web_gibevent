@@ -1,20 +1,22 @@
 $(function() {
     getUserInfo();
 
-
     let layer = layui.layer;
     // 退出功能
     $("#btnLogOut").on("click", function() {
         // 提示是否退出框
-        layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function(index) {
-            // 1.清除本地存储的 token
-            localStorage.removeItem("token");
-            // 2.跳转到登录页
-            location.href = "/login.html";
+        layer.confirm(
+            "确定退出登录?", { icon: 2, title: "提示" },
+            function(index) {
+                // 1.清除本地存储的 token
+                localStorage.removeItem("token");
+                // 2.跳转到登录页
+                location.href = "/login.html";
 
-            // 3.环比询问框,layui自带的功能
-            layer.close(index);
-        });
+                // // 3.关闭询问框,layui自带的功能
+                layer.close(index);
+            }
+        );
     });
 });
 
@@ -61,6 +63,5 @@ function renderAvator(userObj) {
         // 用户名第一个字符转为大写
         let first = name[0].toUpperCase();
         $(".text-ava").html(first).show();
-
     }
 }
