@@ -6,10 +6,10 @@ $(function() {
     form.verify({
         nickname: function(value) {
             if (value.length > 6) {
-                return "昵称长度必须在 1 ~ 6 个字符之间"
+                return "昵称长度必须在 1 ~ 6 个字符之间";
             }
-        }
-    })
+        },
+    });
     initUserInfo();
 
     // 初始化用户信息
@@ -23,10 +23,10 @@ $(function() {
                 } else {
                     // console.log(res);
                     // 调用form.val() 为表单赋值
-                    form.val("formUserInfo", res.data)
+                    form.val("formUserInfo", res.data);
                 }
-            }
-        })
+            },
+        });
     }
 
     // 重置按钮
@@ -34,23 +34,22 @@ $(function() {
         // 阻止表单默认行为
         e.preventDefault();
         initUserInfo();
-    })
+    });
 
     // 提交更新表单
-    $(".layui-form").on('submit', function(e) {
+    $(".layui-form").on("submit", function(e) {
         e.preventDefault();
         $.ajax({
             method: "POST",
-            url: '/my/userinfo',
+            url: "/my/userinfo",
             data: $(this).serialize(),
             success: (res) => {
                 if (res.status !== 0) {
-                    layer.msg("更新用户信息失败!")
+                    layer.msg("更新用户信息失败!");
                 } else {
                     window.parent.getUserInfo();
                 }
-            }
-        })
-    })
-
+            },
+        });
+    });
 });
