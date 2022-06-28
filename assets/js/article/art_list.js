@@ -20,7 +20,17 @@ $(function() {
         minutes = minutes >= 10 ? minutes : "0" + minutes;
         second = second >= 10 ? second : "0" + second;
         return (
-            year + "-" + month + "-" + days + " " + hour + ":" + minutes + ":" + second
+            year +
+            "-" +
+            month +
+            "-" +
+            days +
+            " " +
+            hour +
+            ":" +
+            minutes +
+            ":" +
+            second
         );
     };
     // 定义一个查询对象，将来请求参数的时候，需要将请求参数对象提交到服务器
@@ -136,7 +146,7 @@ $(function() {
                     if (res.status !== 0) {
                         return layer.msg("删除失败！");
                     }
-                    // 当前页已经没有数据
+                    // 删除当前项后,证明当前页已经没有数据,需要跳转到前一页
                     if (delBtnNum === 1) {
                         // 页码值最小为 1
                         q.pagenum = q.pagenum === 1 ? 1 : q.pagenum - 1;
